@@ -3,6 +3,7 @@ import { constructMetadata } from '@/lib/seo';
 import Script from 'next/script';
 import { getBreadcrumbSchema } from '@/lib/schema';
 import Image from 'next/image';
+import Link from 'next/link';
 import CTA from '@/components/sections/CTA';
 
 export const metadata: Metadata = constructMetadata({
@@ -75,36 +76,27 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team & Value */}
+      {/* CTA Buttons Section */}
       <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-4xl mx-auto text-center">
-                 <h2 className="font-amiri text-4xl font-bold text-bg-dark mb-10">الشهادات والإنجازات</h2>
-                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                    <div className="p-6 border border-black/10 rounded-2xl">
-                        <div className="text-4xl font-bold text-primary mb-2">15</div>
-                        <div className="text-text-muted">سنة خبرة</div>
-                    </div>
-                    <div className="p-6 border border-black/10 rounded-2xl">
-                        <div className="text-4xl font-bold text-primary mb-2">+2000</div>
-                        <div className="text-text-muted">مشروع منجز</div>
-                    </div>
-                    <div className="p-6 border border-black/10 rounded-2xl">
-                        <div className="text-4xl font-bold text-primary mb-2">+50</div>
-                        <div className="text-text-muted">عامل وحرفي</div>
-                    </div>
-                    <div className="p-6 border border-black/10 rounded-2xl">
-                        <div className="text-4xl font-bold text-primary mb-2">98%</div>
-                        <div className="text-text-muted">تقييم ممتاز</div>
-                    </div>
-                 </div>
-                 
-                 <div className="mt-16 flex flex-wrap justify-center gap-6">
-                     <span className="px-6 py-3 bg-bg-light text-text-dark font-medium rounded-full shadow-sm border border-black/5">شهادة جودة ISO 9001</span>
-                     <span className="px-6 py-3 bg-bg-light text-text-dark font-medium rounded-full shadow-sm border border-black/5">عضو الغرفة التجارية بالرياض</span>
-                 </div>
-              </div>
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="font-amiri text-4xl font-bold text-bg-dark mb-10">هل أنت مستعد لنبدأ مشروعك القادم؟</h2>
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
+              <Link
+                href="/portfolio"
+                className="px-8 py-4 bg-primary text-white hover:bg-primary-dark transition-colors rounded-xl font-bold text-lg"
+              >
+                تصفح أعمالنا السابقة
+              </Link>
+              <Link
+                href="/contact"
+                className="px-8 py-4 border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-xl font-bold text-lg"
+              >
+                تواصل معنا الآن
+              </Link>
+            </div>
           </div>
+        </div>
       </section>
 
       <CTA />
