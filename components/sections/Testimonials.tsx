@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import TestimonialCard from '@/components/ui/TestimonialCard';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import * as motion from 'motion/react-client';
+import Script from 'next/script';
+import { getReviewSchema } from '@/lib/schema';
 
 const TESTIMONIALS = [
   {
@@ -56,6 +58,16 @@ export default function Testimonials() {
 
   return (
     <section className="py-20 md:py-32 bg-bg-dark text-white relative overflow-hidden">
+      {TESTIMONIALS.map((testimonial, i) => (
+        <Script
+          key={`schema-review-${testimonial.id}`}
+          id={`schema-review-${testimonial.id}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getReviewSchema(testimonial.name, testimonial.rating.toString(), testimonial.content))
+          }}
+        />
+      ))}
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div className="max-w-2xl">

@@ -14,7 +14,7 @@ export function constructMetadata({
   description = siteConfig.description,
   canonical,
   keywords = [
-    "نجار الرياض",
+    "نجارة أبو ثابت",
     "نجارة الرياض",
     "نجار في الرياض",
     "مطابخ خشبية الرياض",
@@ -32,6 +32,11 @@ export function constructMetadata({
     ...(title && { title: `${title} | ${siteConfig.name}` }),
     description,
     keywords,
+    icons: {
+      icon: siteConfig.logo,
+      shortcut: siteConfig.logo,
+      apple: siteConfig.logo,
+    },
     authors: [{ name: siteConfig.name }],
     creator: siteConfig.name,
     publisher: siteConfig.name,

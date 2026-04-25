@@ -9,8 +9,8 @@ import CTA from '@/components/sections/CTA';
 
 export const metadata: Metadata = constructMetadata({
   title: 'خدماتنا',
-  description: 'اكتشف خدمات نجار الرياض الاحترافية: مطابخ خشبية، غرف نوم، أبواب، وديكورات بأعلى معايير الجودة في السعودية.',
-  canonical: '/خدماتنا',
+  description: 'اكتشف خدمات نجارة أبو ثابت الاحترافية: مطابخ خشبية، غرف نوم، أبواب، وديكورات بأعلى معايير الجودة في السعودية.',
+  canonical: '/services',
 });
 
 const DETAILED_SERVICES = [
@@ -21,7 +21,7 @@ const DETAILED_SERVICES = [
     description: "نصمم وننفذ المطابخ الخشبية بأعلى معايير الجودة في الرياض. سواء كنت تبحث عن مطبخ عصري بخطوط نظيفة وألوان محايدة، أو مطبخ كلاسيكي بزخارف وتفاصيل راقية، فريقنا من النجارين المتخصصين يحول رؤيتك إلى واقع. نستخدم خشب البلوط والزان عالي الكثافة مع طلاء مقاوم للحرارة والرطوبة يضمن عمر أطول. كل مطبخ يُصمم خصيصاً بعد قياس دقيق وتقديم مخطط ثلاثي الأبعاد للاعتماد. نوفر الأدراج الناعمة بنظام Soft-Close، والخزائن العلوية المضاءة، والرفوف الداخلية القابلة للتعديل. خدمتنا تشمل التصميم والتصنيع والتركيب مع ضمان سنتين على جميع الأعمال.",
     features: ["تصميم ثلاثي الأبعاد مجاني", "خامات مقاومة للرطوبة والحرارة", "مفصلات هيدروليك هادئة", "ضمان لمدة سنتين"],
     price: "تبدأ من 8,000 ريال",
-    image: "https://picsum.photos/seed/kitch10/800/600"
+    image: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016585/WhatsApp_Image_2026-04-01_at_12.46.06_AM_3_velq5u.jpg"
   },
   {
     id: "bedrooms",
@@ -30,7 +30,7 @@ const DETAILED_SERVICES = [
     description: "تعتبر غرفة النوم الملاذ الأول للراحة، لذا نقدم تصاميم فريدة لغرف النوم الخشبية تناسب ذوقك الخاص وتستغل المساحات بذكاء. نفصل الخزائن الجدارية وغرف الملابس (Walk-in Closets) بتفاصيل داخلية تسهل تنظيم ملابسك ومقتنياتك. نستخدم أخشاباً صلبة وقشور طبيعية تمنح المكان دفئاً وفخامة. نهتم بأدق التفاصيل من السرير إلى التسريحة وكومودينو بأشكال تتفاوت بين المودرن النقي والكلاسيكي الفاخر. بالإضافة إلى خدمة التركيب الاحترافية لضمان ثبات تام بلا أية أصوات مزعجة.",
     features: ["استغلال ذكي للمساحات الصغيرة", "تشكيلة واسعة من القشرات الطبيعية", "تفصيل وحدات أدراج ومكياج مدمجة", "تسليم خلال 3 أسابيع"],
     price: "تبدأ من 5,500 ريال",
-    image: "https://picsum.photos/seed/bed10/800/600"
+    image: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016584/WhatsApp_Image_2026-04-01_at_12.46.05_AM_3_rdtbcf.jpg"
   },
   {
     id: "doors",
@@ -39,7 +39,7 @@ const DETAILED_SERVICES = [
     description: "باب منزلك هو العنوان الأول، ولذلك نحرص في نجار الرياض على تصميم وتنفيذ أبواب خشبية متينة، عازلة للصوت، وذات تصاميم ترضي كافة الأذواق. نصنع الأبواب الخارجية من الخشب الصلب المعالج لمقاومة العوامل الجوية القاسية من شمس ورطوبة. أما الأبواب الداخلية فتأتي بخيارات متعددة، من الأبواب الكبس الملبسة بقشرة طبيعية إلى أبواب الحشو التي توفر عزلاً مثالياً. نعتمد أحدث طرق الدهان والتشطيب، ونزودها بمقابض عالية الجودة لضمان أداء سلس وتصميم يعكس الرقي.",
     features: ["عزل صوتي وحراري ممتاز", "أخشاب صلبة معالجة للرطوبة", "تصاميم سادة، محفورة، ومطرزة", "إطارات ومفصلات ثقيلة"],
     price: "تبدأ من 1,200 ريال للباب",
-    image: "https://picsum.photos/seed/door10/800/600"
+    image: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016584/WhatsApp_Image_2026-04-01_at_12.46.04_AM_3_equ4wh.jpg"
   },
   {
     id: "decor",
@@ -48,7 +48,7 @@ const DETAILED_SERVICES = [
     description: "أضف لمسة من الدفء والجمال لمحيطك مع ديكوراتنا الخشبية المصممة بعناية. نقدم خدمات تكسية الجدران والأسقف بالخشب المعالج الذي يضفي طابعاً سينمائياً فخماً للصالات وغرف استقبال الضيوف والمجالس. كما نصمم البرجولات الخشبية والمظلات الخارجية للحدائق والجلسات الخارجية بأسطح تعزل الحرارة وتتحمل الظروف المناخية في الرياض. أعمالنا الديكورية تمزج بين الخشب الطبيعي وتقنيات الإضاءة المخفية لابتكار مساحات تريح النفس وتبهر العين.",
     features: ["تكسيات جدارية بتصاميم هندسية", "برجولات معالجة ضد الشمس", "استخدام تكنولوجيا CNC للحفر", "دمج الإضاءة المخفية مع الخشب"],
     price: "حسب المقاس والتصميم",
-    image: "https://picsum.photos/seed/decor10/800/600"
+    image: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016583/WhatsApp_Image_2026-04-01_at_12.46.05_AM_sj3um2.jpg"
   },
   {
     id: "office",
@@ -57,7 +57,7 @@ const DETAILED_SERVICES = [
     description: "بيئة العمل المحفزة تبدأ من الأثاث العملي والمريح. نقدم حلولاً متكاملة لتجهيز مكاتب الشركات الفردية والجماعية في الرياض. نفصل المكاتب الرئاسية من الأخشاب الفاخرة التي تعكس الهيبة والاحترافية، ونصمم طاولات الاجتماعات الكبيرة المجهزة بمنافذ ذكية للكهرباء والشبكات. كما نصنع محطات العمل (Workstations) المرنة التي تتيح لموظفيك العمل براحة. نهتم باللمسة الجمالية والعملية لتكون مقرات العمل واجهة مشرفة أمام عملائكم.",
     features: ["أثاث مريح بتصميم مريح (Ergonomic)", "مكاتب رئاسية فخمة", "طاولات اجتماعات مدمجة التقنية", "مكاتب عمل جماعية مقسمة"],
     price: "تبدأ من 2,500 ريال للمكتب الفردي",
-    image: "https://picsum.photos/seed/office10/800/600"
+    image: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016582/WhatsApp_Image_2026-04-01_at_12.46.04_AM_2_nwmzjg.jpg"
   },
   {
     id: "maintenance",
@@ -66,14 +66,15 @@ const DETAILED_SERVICES = [
     description: "لا تتخلص من أثاثك القديم أو التالف؛ نحن نمتلك المهارة والخبرة لإعادته إلى الحياة كما لو كان جديداً. خدمة صيانة وترميم الأثاث الخشبي تشتمل على إصلاح الخدوش، تغيير لون الخشب وتجديد الدهان بالكامل، تقوية الهياكل الضعيفة وتغيير المفصلات والإكسسوارات. نتعامل مع التحف والقطع الخشبية النادرة بحذر شديد واستخدام مواد ترميم لا تؤثر على قيمتها الأصلية، لنمنحك فرصة الاحتفاظ بقطعك المفضلة لفترة أطول وبمظهر أكثر جاذبية.",
     features: ["تجديد دهانات وإزالة الخدوش", "استبدال المفصلات والمقابض", "ترميم القطع الأثرية والقديمة", "تقوية وإصلاح الكسور الجوهرية"],
     price: "تبدأ من 300 ريال حسب التلف",
-    image: "https://picsum.photos/seed/maint10/800/600"
+    image: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016582/WhatsApp_Image_2026-04-01_at_12.46.03_AM_dokbdt.jpg"
   }
 ];
 
+// Trigger rebuild
 export default function ServicesPage() {
   const breadcrumbs = [
     { name: "الرئيسية", url: "/" },
-    { name: "خدماتنا", url: "/خدماتنا" },
+    { name: "خدماتنا", url: "/services" },
   ];
 
   return (
@@ -97,7 +98,7 @@ export default function ServicesPage() {
       {/* Page Header */}
       <section className="bg-bg-dark pt-32 pb-20 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <Image src="https://picsum.photos/seed/woodbg2/1920/1080" alt="خلفية" fill className="object-cover" />
+          <Image src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016579/WhatsApp_Image_2026-04-01_at_12.46.03_AM_4_t7zg8g.jpg" alt="خلفية" fill className="object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-bg-light to-transparent translate-y-20 opacity-10 blur-3xl pointer-events-none"></div>
 
@@ -156,7 +157,7 @@ export default function ServicesPage() {
                     <span className="text-accent ml-2 text-sm">تكلفة تقريبية:</span>
                     {service.price}
                   </div>
-                  <Link href="/اتصل-بنا" className="text-primary font-bold hover:text-accent transition-colors underline underline-offset-8 decoration-2 decoration-primary/20 hover:decoration-accent">
+                  <Link href="/contact" className="text-primary font-bold hover:text-accent transition-colors underline underline-offset-8 decoration-2 decoration-primary/20 hover:decoration-accent">
                     طلب هذه الخدمة ←
                   </Link>
                 </div>
@@ -166,7 +167,10 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <CTA />
+      <CTA 
+        title="احصل على استشارة مهنية مجانية اليوم"
+        subtitle="هل لديك مشروع نجارة في ذهنك؟ نحن هنا لمساعدتك. تواصل معنا للحصول على استشارة مهنية مجانية وعرض سعر مخصص لمشروعك، وسنقوم بتحويل أفكارك إلى واقع ملموس بدقة واحترافية."
+      />
     </>
   );
 }

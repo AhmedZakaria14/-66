@@ -6,13 +6,13 @@ export const getLocalBusinessSchema = () => {
     "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
     "@id": `${siteConfig.domain}/#business`,
     name: siteConfig.name,
-    alternateName: ["نجار الرياض للأعمال الخشبية", "Najjar Riyadh"],
+    alternateName: ["نجارة أبو ثابت للأعمال الخشبية", "Najjar Riyadh"],
     description: siteConfig.description,
     url: siteConfig.domain,
     telephone: siteConfig.contact.phone,
     email: siteConfig.contact.email,
     image: [`${siteConfig.domain}/images/og-main.jpg`],
-    logo: `${siteConfig.domain}/images/logo.png`,
+    logo: siteConfig.logo,
     address: {
       "@type": "PostalAddress",
       streetAddress: "طريق الملك فهد",
@@ -164,3 +164,54 @@ export const getReviewSchema = (
     reviewBody: reviewBody,
   };
 };
+
+export const getBlogSchema = (posts: { title: string; excerpt: string; date: string; slug: string; image: string }[]) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "المدونة والنصائح | نجار الرياض",
+    "description": "مدونة نجار الرياض: مقالات ونصائح حول اختيار الأخشاب، تصاميم المطابخ، العناية بالأثاث، وأحدث ديكورات الخشب.",
+    "producer": {
+      "@id": `${siteConfig.domain}/#business`
+    },
+    "blogPost": posts.map(post => ({
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "datePublished": `${post.date}T08:00:00+03:00`,
+      "url": `${siteConfig.domain}/blog/${post.slug}`,
+      "image": post.image,
+      "author": {
+        "@type": "Organization",
+        "name": siteConfig.name,
+        "url": siteConfig.domain
+      }
+    }))
+  };
+};
+
+export const getArticleSchema = (post: { title: string; excerpt: string; date: string; slug: string; image: string }) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.excerpt,
+    "image": [post.image],
+    "datePublished": `${post.date}T08:00:00+03:00`,
+    "dateModified": `${post.date}T08:00:00+03:00`,
+    "url": `${siteConfig.domain}/blog/${post.slug}`,
+    "author": [{
+      "@type": "Organization",
+      "name": siteConfig.name,
+      "url": siteConfig.domain
+    }],
+    "publisher": {
+      "@id": `${siteConfig.domain}/#business`
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `${siteConfig.domain}/blog/${post.slug}`
+    }
+  };
+};
+

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { MAIN_NAV, SERVICES_LIST, siteConfig } from '@/lib/constants';
 import { MapPin, Phone, Mail, Instagram, Twitter } from 'lucide-react';
 
@@ -13,9 +14,13 @@ export default function Footer() {
           {/* Column 1: Brand */}
           <div className="flex flex-col gap-6">
             <Link href="/" className="inline-block" aria-label="الرئيسية">
-              <span className="font-amiri font-bold text-3xl text-white">
-                نجار الرياض<span className="text-accent">.</span>
-              </span>
+              <Image 
+                src={siteConfig.logo} 
+                alt={siteConfig.name} 
+                width={180} 
+                height={60} 
+                className="object-contain h-14 w-auto scale-125 origin-right"
+              />
             </Link>
             <p className="text-sm leading-relaxed text-white/60">
               {siteConfig.description}
@@ -50,7 +55,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               {SERVICES_LIST.map((item) => (
                 <li key={item.id}>
-                  <Link href="/خدماتنا" className="text-sm hover:text-accent transition-colors flex items-center gap-2 before:content-[''] before:w-1.5 before:h-1.5 before:bg-accent before:rounded-full before:opacity-0 hover:before:opacity-100 before:transition-opacity">
+                  <Link href={`/services/${item.id}`} className="text-sm hover:text-accent transition-colors flex items-center gap-2 before:content-[''] before:w-1.5 before:h-1.5 before:bg-accent before:rounded-full before:opacity-0 hover:before:opacity-100 before:transition-opacity">
                     {item.title}
                   </Link>
                 </li>
@@ -91,8 +96,8 @@ export default function Footer() {
             حقوق النشر {currentYear} © <span className="text-white/80">{siteConfig.name}</span>. جميع الحقوق محفوظة.
           </p>
           <div className="flex items-center gap-6 text-sm text-white/50">
-            <Link href="#" className="hover:text-white transition-colors">سياسة الخصوصية</Link>
-            <Link href="#" className="hover:text-white transition-colors">الشروط والأحكام</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">سياسة الخصوصية</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">الشروط والأحكام</Link>
           </div>
         </div>
       </div>

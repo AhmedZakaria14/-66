@@ -17,6 +17,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**', // This allows any path under the hostname
       },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
   output: 'standalone',
@@ -29,12 +35,6 @@ const nextConfig: NextConfig = {
           { key: 'X-Robots-Tag', value: 'index, follow' }
         ]
       }
-    ];
-  },
-  async redirects() {
-    return [
-      { source: '/services', destination: '/%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%86%D8%A7', permanent: true },
-      { source: '/contact', destination: '/%D8%A7%D8%AA%D8%B5%D9%84-%D8%A8%D9%86%D8%A7', permanent: true },
     ];
   },
   webpack: (config, {dev}) => {

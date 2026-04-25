@@ -32,7 +32,7 @@ export default function TestimonialCard({ name, location, content, rating }: Tes
           {name.charAt(0)}
         </div>
         <div>
-          <h4 className="font-bold text-bg-dark">{name}</h4>
+          <h3 className="font-bold text-bg-dark">{name}</h3>
           <p className="text-sm text-text-muted">{location}</p>
         </div>
       </div>

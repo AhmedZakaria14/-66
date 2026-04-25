@@ -8,14 +8,14 @@ import Image from 'next/image';
 
 export const metadata: Metadata = constructMetadata({
   title: 'معرض الأعمال',
-  description: 'تصفح أحدث مشاريع نجار الرياض من غرف نوم ومطابخ خشبية وأبواب وديكورات مخصصة بمدينة الرياض.',
-  canonical: '/أعمالنا',
+  description: 'تصفح أحدث مشاريع نجارة أبو ثابت من غرف نوم ومطابخ خشبية وأبواب وديكورات مخصصة بمدينة الرياض.',
+  canonical: '/portfolio',
 });
 
 export default function PortfolioPage() {
   const breadcrumbs = [
     { name: "الرئيسية", url: "/" },
-    { name: "أعمالنا", url: "/أعمالنا" },
+    { name: "أعمالنا", url: "/portfolio" },
   ];
 
   return (
@@ -29,7 +29,7 @@ export default function PortfolioPage() {
       {/* Page Header */}
       <section className="bg-bg-dark pt-32 pb-20 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <Image src="https://picsum.photos/seed/woodbg3/1920/1080" alt="خلفية أعمالنا" fill className="object-cover" />
+          <Image src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016585/WhatsApp_Image_2026-04-01_at_12.46.06_AM_1_oxwnww.jpg" alt="خلفية أعمالنا" fill className="object-cover" />
         </div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">

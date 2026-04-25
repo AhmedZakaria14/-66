@@ -8,9 +8,10 @@ interface ServiceCardProps {
   excerpt: string;
   imageSrc: string;
   delay?: number;
+  href?: string;
 }
 
-export default function ServiceCard({ title, excerpt, imageSrc, delay = 0 }: ServiceCardProps) {
+export default function ServiceCard({ title, excerpt, imageSrc, delay = 0, href = "/services" }: ServiceCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -38,7 +39,7 @@ export default function ServiceCard({ title, excerpt, imageSrc, delay = 0 }: Ser
           {excerpt}
         </p>
         <Link 
-          href="/خدماتنا" 
+          href={href} 
           className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:text-accent transition-colors group/link"
         >
           اكتشف المزيد

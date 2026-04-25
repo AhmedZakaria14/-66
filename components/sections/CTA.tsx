@@ -5,13 +5,19 @@ import * as motion from 'motion/react-client';
 import Image from 'next/image';
 import { Phone, MessageCircle } from 'lucide-react';
 
-export default function CTA() {
+export default function CTA({ 
+  title = "جاهز لتحويل منزلك؟", 
+  subtitle = "تواصل معنا اليوم واحصل على استشارة مهنية مجانية وعرض سعر مخصص لمشروعك خلال 24 ساعة فقط. الحرفة المتقنة تبدأ بخطوة." 
+}: { 
+  title?: string;
+  subtitle?: string;
+}) {
   return (
     <section className="relative py-24 overflow-hidden bg-bg-dark">
       {/* Background Image & Texture */}
       <div className="absolute inset-0 z-0 select-none">
         <Image
-          src="https://picsum.photos/seed/woodbg/1920/1080"
+          src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016579/WhatsApp_Image_2026-04-01_at_12.46.03_AM_3_uu7bjj.jpg"
           alt="نجارة وخشب"
           fill
           className="object-cover opacity-20 brightness-50"
@@ -28,7 +34,7 @@ export default function CTA() {
             viewport={{ once: true }}
             className="font-amiri text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6"
           >
-            جاهز لتحويل منزلك؟
+            {title}
           </motion.h2>
           
           <motion.p 
@@ -38,7 +44,7 @@ export default function CTA() {
             transition={{ delay: 0.1 }}
             className="text-white/70 text-lg md:text-xl mb-10 leading-relaxed"
           >
-            تواصل معنا اليوم واحصل على استشارة مهنية مجانية وعرض سعر مخصص لمشروعك خلال 24 ساعة فقط. الحرفة المتقنة تبدأ بخطوة.
+            {subtitle}
           </motion.p>
           
           <motion.div 

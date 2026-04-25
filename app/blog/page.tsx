@@ -1,21 +1,21 @@
 import { Metadata } from 'next';
 import { constructMetadata } from '@/lib/seo';
 import Script from 'next/script';
-import { getBreadcrumbSchema } from '@/lib/schema';
+import { getBreadcrumbSchema, getBlogSchema } from '@/lib/schema';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BLOG_POSTS } from '@/lib/constants';
 
 export const metadata: Metadata = constructMetadata({
   title: 'المدونة',
-  description: 'مدونة نجار الرياض: مقالات ونصائح حول اختيار الأخشاب، تصاميم المطابخ، العناية بالأثاث، وأحدث ديكورات الخشب في 2025.',
-  canonical: '/المدونة',
+  description: 'مدونة نجارة أبو ثابت: مقالات ونصائح حول اختيار الأخشاب، تصاميم المطابخ، العناية بالأثاث، وأحدث ديكورات الخشب في 2025.',
+  canonical: '/blog',
 });
 
 export default function BlogPage() {
   const breadcrumbs = [
     { name: "الرئيسية", url: "/" },
-    { name: "المدونة", url: "/المدونة" },
+    { name: "المدونة", url: "/blog" },
   ];
 
   return (
@@ -24,6 +24,11 @@ export default function BlogPage() {
         id="schema-breadcrumb"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getBreadcrumbSchema(breadcrumbs)) }}
+      />
+      <Script
+        id="schema-blog"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getBlogSchema(BLOG_POSTS)) }}
       />
       
       {/* Page Header */}
@@ -44,7 +49,7 @@ export default function BlogPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {BLOG_POSTS.map((post) => (
               <article key={post.slug} className="bg-white rounded-3xl overflow-hidden shadow-sm border border-black/5 hover:shadow-xl transition-shadow duration-300 group">
-                <Link href={`/المدونة/${post.slug}`} className="block">
+                <Link href={`/blog/${post.slug}`} className="block">
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image src={post.image} alt={post.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                     <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary">

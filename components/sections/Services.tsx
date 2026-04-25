@@ -2,12 +2,12 @@ import { SERVICES_LIST } from '@/lib/constants';
 import ServiceCard from '@/components/ui/ServiceCard';
 
 const SERVICE_IMAGES = [
-  'https://picsum.photos/seed/kitchen1/600/450',
-  'https://picsum.photos/seed/bedroom1/600/450',
-  'https://picsum.photos/seed/door1/600/450',
-  'https://picsum.photos/seed/decor1/600/450',
-  'https://picsum.photos/seed/office1/600/450',
-  'https://picsum.photos/seed/wood1/600/450',
+  'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016585/WhatsApp_Image_2026-04-01_at_12.46.06_AM_3_velq5u.jpg',
+  'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016584/WhatsApp_Image_2026-04-01_at_12.46.05_AM_3_rdtbcf.jpg',
+  'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016584/WhatsApp_Image_2026-04-01_at_12.46.04_AM_3_equ4wh.jpg',
+  'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016583/WhatsApp_Image_2026-04-01_at_12.46.05_AM_sj3um2.jpg',
+  'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016582/WhatsApp_Image_2026-04-01_at_12.46.04_AM_2_nwmzjg.jpg',
+  'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016582/WhatsApp_Image_2026-04-01_at_12.46.03_AM_dokbdt.jpg',
 ];
 
 export default function Services() {
@@ -34,6 +34,7 @@ export default function Services() {
               excerpt={service.excerpt}
               imageSrc={SERVICE_IMAGES[index]}
               delay={index * 0.1}
+              href={`/services/${service.id}`}
             />
           ))}
         </div>

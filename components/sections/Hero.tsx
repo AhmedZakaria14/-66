@@ -10,21 +10,20 @@ export default function Hero() {
   
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-bg-dark pt-20">
-      {/* Background Image with Parallax & Overlay */}
-      <div className="absolute inset-0 z-0 select-none">
-        <Image
-          src="https://picsum.photos/seed/woodworking/1920/1080"
-          alt="نجار الرياض خلفية خشبية"
-          fill
-          priority
-          className="object-cover opacity-40 brightness-50"
-          sizes="100vw"
+      {/* Background Video with Parallax & Overlay */}
+      <div className="absolute inset-0 z-0 select-none overflow-hidden">
+        <video 
+          src="https://res.cloudinary.com/dxvjqrb9l/video/upload/v1777016633/WhatsApp_Video_2026-04-01_at_12.46.07_AM_ap19jy.mp4" 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="absolute min-w-full min-h-full max-w-none w-auto h-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover opacity-100 brightness-100"
         />
-        {/* Grain Overlay */}
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-bg-dark/60 auto"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-bg-dark/80 via-transparent to-bg-dark/80"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/40 via-transparent auto"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-bg-dark/30 via-transparent to-bg-dark/30"></div>
       </div>
 
       <div className="container relative z-10 mx-auto px-4 md:px-6">
@@ -83,13 +82,15 @@ export default function Hero() {
             >
               اتصل الآن: {siteConfig.contact.phoneDisplay}
             </a>
-            <Link
-              href="/اتصل-بنا"
+            <a
+              href={siteConfig.social.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 bg-white/10 text-white backdrop-blur-md rounded-xl font-bold text-lg transition-all hover:bg-white/20 border border-white/20 flex items-center justify-center gap-2 group"
             >
               اطلب عرض سعر مجاني
               <span className="group-hover:-translate-x-1 transition-transform transform rotate-180 inline-block font-sans">→</span>
-            </Link>
+            </a>
           </motion.div>
         </div>
       </div>

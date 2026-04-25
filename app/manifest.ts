@@ -4,7 +4,7 @@ import { siteConfig } from '@/lib/constants';
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: siteConfig.name,
-    short_name: 'نجار الرياض',
+    short_name: 'نجارة أبو ثابت',
     description: siteConfig.description,
     start_url: '/',
     display: 'standalone',

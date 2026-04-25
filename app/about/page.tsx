@@ -7,14 +7,14 @@ import CTA from '@/components/sections/CTA';
 
 export const metadata: Metadata = constructMetadata({
   title: 'عن الشركة',
-  description: 'تعرف على قصة نجار الرياض، خبرتنا لأكثر من 15 عاماً في تقديم خدمات النجارة الاحترافية، رؤيتنا، ورسالتنا.',
-  canonical: '/عن-الشركة',
+  description: 'تعرف على قصة نجارة أبو ثابت، خبرتنا لأكثر من 15 عاماً في تقديم خدمات النجارة الاحترافية، رؤيتنا، ورسالتنا.',
+  canonical: '/about',
 });
 
 export default function AboutPage() {
   const breadcrumbs = [
     { name: "الرئيسية", url: "/" },
-    { name: "عن الشركة", url: "/عن-الشركة" },
+    { name: "عن الشركة", url: "/about" },
   ];
 
   return (
@@ -67,7 +67,7 @@ export default function AboutPage() {
             <div className="relative">
               <div className="absolute -inset-4 bg-primary/5 rounded-[3rem] transform -rotate-3"></div>
               <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl">
-                 <Image src="https://picsum.photos/seed/carpenter/800/1000" alt="نجار الرياض يعمل في الورشة" fill className="object-cover" />
+                 <Image src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016586/WhatsApp_Image_2026-04-01_at_12.46.06_AM_hnnp9e.jpg" alt="نجار الرياض يعمل في الورشة" fill className="object-cover" />
               </div>
             </div>
 

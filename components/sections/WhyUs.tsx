@@ -33,7 +33,7 @@ export default function WhyUs() {
       {/* Texture Background */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <Image
-          src="https://picsum.photos/seed/woodtexture2/1920/1080"
+          src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016579/WhatsApp_Image_2026-04-01_at_12.46.00_AM_qcadvy.jpg"
           alt="texture"
           fill
           className="object-cover"
@@ -51,7 +51,7 @@ export default function WhyUs() {
               viewport={{ once: true }}
               className="text-accent font-bold tracking-wider uppercase text-sm mb-4 block"
             >
-              لماذا نجار الرياض؟
+              لماذا نجارة أبو ثابت؟
             </motion.span>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
@@ -104,7 +104,7 @@ export default function WhyUs() {
           >
             <div className="aspect-[4/5] rounded-3xl overflow-hidden relative border border-white/10">
               <Image
-                src="https://picsum.photos/seed/carpenterworking/800/1000"
+                src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016578/WhatsApp_Image_2026-04-01_at_12.46.02_AM_foly1d.jpg"
                 alt="نجار محترف في الرياض يعمل على قطعة خشبية"
                 fill
                 className="object-cover"

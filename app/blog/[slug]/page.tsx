@@ -1,35 +1,53 @@
 import { Metadata } from 'next';
 import { constructMetadata } from '@/lib/seo';
 import Script from 'next/script';
-import { getBreadcrumbSchema } from '@/lib/schema';
-import { BLOG_POSTS } from '@/lib/constants';
+import { getBreadcrumbSchema, getArticleSchema } from '@/lib/schema';
+import { BLOG_POSTS, siteConfig } from '@/lib/constants';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+
+export async function generateStaticParams() {
+  return BLOG_POSTS.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> }
 ): Promise<Metadata> {
   const resolvedParams = await params;
-  const post = BLOG_POSTS.find(p => p.slug === resolvedParams.slug);
+  const decodedSlug = decodeURIComponent(resolvedParams.slug);
+  const post = BLOG_POSTS.find(p => p.slug === decodedSlug);
   
   if (!post) {
     return {};
   }
 
-  return constructMetadata({
+  const baseMeta = constructMetadata({
     title: post.title,
     description: post.excerpt,
-    canonical: `/المدونة/${post.slug}`,
+    canonical: `/blog/${post.slug}`,
     ogImage: post.image,
   });
+
+  return {
+    ...baseMeta,
+    openGraph: {
+      ...baseMeta.openGraph,
+      type: 'article',
+      publishedTime: `${post.date}T08:00:00+03:00`,
+      authors: [siteConfig.name],
+    }
+  };
 }
 
 export default async function BlogPostPage(
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const resolvedParams = await params;
-  const post = BLOG_POSTS.find(p => p.slug === resolvedParams.slug);
+  const decodedSlug = decodeURIComponent(resolvedParams.slug);
+  const post = BLOG_POSTS.find(p => p.slug === decodedSlug);
 
   if (!post) {
     notFound();
@@ -37,25 +55,9 @@ export default async function BlogPostPage(
 
   const breadcrumbs = [
     { name: "الرئيسية", url: "/" },
-    { name: "المدونة", url: "/المدونة" },
-    { name: post.title, url: `/المدونة/${post.slug}` },
+    { name: "المدونة", url: "/blog" },
+    { name: post.title, url: `/blog/${post.slug}` },
   ];
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": post.title,
-    "image": [
-      post.image
-    ],
-    "datePublished": `${post.date}T08:00:00+08:00`,
-    "dateModified": `${post.date}T08:00:00+08:00`,
-    "author": [{
-        "@type": "Person",
-        "name": "نجار الرياض",
-        "url": "https://najjar-riyadh.com"
-      }]
-  };
 
   return (
     <>
@@ -67,13 +69,13 @@ export default async function BlogPostPage(
       <Script
         id="schema-article"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getArticleSchema(post)) }}
       />
 
       <article className="pt-32 pb-20 bg-bg-light min-h-screen">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
           
-          <Link href="/المدونة" className="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-bold mb-8 transition-colors">
+          <Link href="/blog" className="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-bold mb-8 transition-colors">
             <span className="transform inline-block font-sans">→</span> العودة للمدونة
           </Link>
 

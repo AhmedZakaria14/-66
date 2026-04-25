@@ -1,42 +1,56 @@
 import { MetadataRoute } from 'next';
-import { siteConfig, BLOG_POSTS } from '@/lib/constants';
+import { headers } from 'next/headers';
+import { siteConfig, BLOG_POSTS, SERVICES_LIST } from '@/lib/constants';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const domain = siteConfig.domain;
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const headersList = await headers();
+  const domain = `https://${headersList.get('host')}`;
 
   const staticPages = [
     {
-      url: `${domain}`,
+      url: encodeURI(`${domain}`),
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 1.0,
     },
     {
-      url: `${domain}/خدماتنا`,
+      url: encodeURI(`${domain}/services`),
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
     {
-      url: `${domain}/أعمالنا`,
+      url: encodeURI(`${domain}/portfolio`),
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
     {
-      url: `${domain}/عن-الشركة`,
+      url: encodeURI(`${domain}/about`),
       lastModified: new Date(),
       changeFrequency: 'yearly' as const,
       priority: 0.7,
     },
     {
-      url: `${domain}/اتصل-بنا`,
+      url: encodeURI(`${domain}/contact`),
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
-      url: `${domain}/المدونة`,
+      url: encodeURI(`${domain}/privacy`),
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.5,
+    },
+    {
+      url: encodeURI(`${domain}/terms`),
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.5,
+    },
+    {
+      url: encodeURI(`${domain}/blog`),
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
@@ -44,11 +58,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const blogPages = BLOG_POSTS.map((post) => ({
-    url: `${domain}/المدونة/${post.slug}`,
+    url: encodeURI(`${domain}/blog/${post.slug}`),
     lastModified: new Date(post.date),
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }));
 
-  return [...staticPages, ...blogPages];
+  const servicePages = SERVICES_LIST.map((service) => ({
+    url: encodeURI(`${domain}/services/${service.id}`),
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...blogPages, ...servicePages];
 }

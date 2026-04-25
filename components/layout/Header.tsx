@@ -8,6 +8,8 @@ import { MAIN_NAV, siteConfig } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import * as motion from 'motion/react-client';
 
+import Image from 'next/image';
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -33,9 +35,14 @@ export default function Header() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group relative z-50" aria-label="الرئيسية">
-            <span className={cn("font-amiri font-bold text-2xl lg:text-3xl transition-colors", isScrolled ? "text-white" : "text-white")}>
-              نجار الرياض<span className="text-accent">.</span>
-            </span>
+            <Image 
+              src={siteConfig.logo} 
+              alt={siteConfig.name} 
+              width={160} 
+              height={50} 
+              className="object-contain h-12 w-auto scale-125 origin-left"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}

@@ -7,7 +7,7 @@ import { getLocalBusinessSchema, getWebsiteSchema } from '@/lib/schema';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import FloatingWhatsApp from '@/components/layout/FloatingWhatsApp';
+import FloatingActions from '@/components/layout/FloatingActions';
 
 const amiri = Amiri({
   weight: ['400', '700'],
@@ -37,8 +37,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Trigger rebuild
   return (
-    <html lang="ar" dir="rtl" className={`${amiri.variable} ${tajawal.variable}`} suppressHydrationWarning>
+    <html lang="ar" dir="rtl" className={`scroll-smooth ${amiri.variable} ${tajawal.variable}`} suppressHydrationWarning>
       <head>
         <meta name="geo.region" content="SA-01" />
         <meta name="geo.placename" content="الرياض" />
@@ -64,7 +65,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <FloatingWhatsApp />
+        <FloatingActions />
         {process.env.NEXT_PUBLIC_GA_ID && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />}
       </body>
     </html>
