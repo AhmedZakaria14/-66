@@ -35,9 +35,6 @@
 
   body {
     @apply bg-bg-light text-text-dark font-tajawal antialiased selection:bg-primary/30 selection:text-primary-dark;
-    background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
-    /* Ensure the background pattern blends well with sections */
-    background-blend-mode: multiply;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -48,18 +45,12 @@
 @layer utilities {
   .bg-bg-light {
     background-color: var(--bg-light);
-    background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
-    background-blend-mode: multiply;
   }
   .bg-bg-dark {
     background-color: var(--bg-dark);
-    background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
-    background-blend-mode: overlay;
   }
   .bg-primary {
     background-color: var(--primary);
-    background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
-    background-blend-mode: multiply;
   }
   
   .clip-diagonal {

@@ -17,7 +17,7 @@ const amiri = Amiri({
 });
 
 const tajawal = Tajawal({
-  weight: ['300', '400', '500', '700', '800'],
+  weight: ['400', '500', '700'],
   subsets: ['arabic'],
   variable: '--font-tajawal',
   display: 'swap',

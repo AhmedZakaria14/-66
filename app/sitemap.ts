@@ -1,10 +1,8 @@
 import { MetadataRoute } from 'next';
-import { headers } from 'next/headers';
 import { siteConfig, BLOG_POSTS, SERVICES_LIST } from '@/lib/constants';
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const headersList = await headers();
-  const domain = `https://${headersList.get('host')}`;
+export default function sitemap(): MetadataRoute.Sitemap {
+  const domain = siteConfig.domain;
 
   const staticPages = [
     {

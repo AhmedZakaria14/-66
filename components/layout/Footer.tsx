@@ -17,8 +17,8 @@ export default function Footer() {
               <Image 
                 src={siteConfig.logo} 
                 alt={siteConfig.name} 
-                width={180} 
-                height={60} 
+                width={120} 
+                height={40} 
                 className="object-contain h-14 w-auto scale-125 origin-right"
               />
             </Link>

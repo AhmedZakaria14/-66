@@ -1,7 +1,6 @@
 'use client';
 
 import { siteConfig } from '@/lib/constants';
-import * as motion from 'motion/react-client';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -13,11 +12,13 @@ export default function Hero() {
       {/* Background Video with Parallax & Overlay */}
       <div className="absolute inset-0 z-0 select-none overflow-hidden">
         <video 
-          src="https://res.cloudinary.com/dxvjqrb9l/video/upload/v1777016633/WhatsApp_Video_2026-04-01_at_12.46.07_AM_ap19jy.mp4" 
+          src="https://res.cloudinary.com/dxvjqrb9l/video/upload/q_auto,vc_auto,w_1280/v1777016633/WhatsApp_Video_2026-04-01_at_12.46.07_AM_ap19jy.mp4" 
+          poster="https://res.cloudinary.com/dxvjqrb9l/video/upload/q_auto,f_webp,w_1280/v1777016633/WhatsApp_Video_2026-04-01_at_12.46.07_AM_ap19jy.jpg"
           autoPlay 
           loop 
           muted 
           playsInline 
+          preload="none"
           className="absolute min-w-full min-h-full max-w-none w-auto h-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover opacity-100 brightness-100"
         />
         {/* Gradient Overlay */}
@@ -29,50 +30,32 @@ export default function Hero() {
       <div className="container relative z-10 mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
           
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-4 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 rounded-full text-accent-light text-sm font-medium"
+          <div
+            className="mb-4 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 rounded-full text-accent-light text-sm font-medium animate-in fade-in slide-in-from-bottom-6 duration-1000"
           >
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
             أفضل مهارات النجارة في الرياض
-          </motion.div>
+          </div>
 
-          <h2 className="text-4xl md:text-6xl lg:text-8xl text-white font-amiri font-bold leading-tight md:leading-[1.1] mb-6 flex flex-wrap justify-center gap-x-3 md:gap-x-5">
+          <h2 className="text-4xl md:text-6xl lg:text-8xl text-white font-amiri font-bold leading-tight md:leading-[1.1] mb-6 flex flex-wrap justify-center gap-x-3 md:gap-x-5 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150 fill-mode-both">
             {title.split(' ').map((word, index) => (
-              <motion.span
+              <span
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.3 + index * 0.1,
-                  type: 'spring',
-                  stiffness: 100,
-                  damping: 20
-                }}
                 className={word === 'الجمال' ? 'text-accent text-glow' : ''}
               >
                 {word}
-              </motion.span>
+              </span>
             ))}
           </h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="text-lg md:text-xl text-white/80 max-w-2xl text-center leading-relaxed mb-10"
+          <p
+            className="text-lg md:text-xl text-white/80 max-w-2xl text-center leading-relaxed mb-10 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-both"
           >
             أفضل نجار في الرياض — مطابخ، غرف نوم، أبواب، وديكورات خشبية بأيدي حرفيين متخصصين منذ 2009
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+          <div
+            className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both"
           >
             <a
               href={`tel:${siteConfig.contact.phone}`}
@@ -91,7 +74,7 @@ export default function Hero() {
               اطلب عرض سعر مجاني
               <span className="group-hover:-translate-x-1 transition-transform transform rotate-180 inline-block font-sans">→</span>
             </a>
-          </motion.div>
+          </div>
         </div>
       </div>
 

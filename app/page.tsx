@@ -1,14 +1,16 @@
 import { constructMetadata } from "@/lib/seo";
 import Hero from "@/components/sections/Hero";
-import Stats from "@/components/sections/Stats";
-import Services from "@/components/sections/Services";
-import WhyUs from "@/components/sections/WhyUs";
-import Portfolio from "@/components/sections/Portfolio";
-import Process from "@/components/sections/Process";
-import Testimonials from "@/components/sections/Testimonials";
-import FAQ from "@/components/sections/FAQ";
-import CTA from "@/components/sections/CTA";
+import dynamic from 'next/dynamic';
 import { siteConfig } from "@/lib/constants";
+
+const Stats = dynamic(() => import("@/components/sections/Stats"));
+const Services = dynamic(() => import("@/components/sections/Services"));
+const WhyUs = dynamic(() => import("@/components/sections/WhyUs"));
+const Portfolio = dynamic(() => import("@/components/sections/Portfolio"));
+const Process = dynamic(() => import("@/components/sections/Process"));
+const Testimonials = dynamic(() => import("@/components/sections/Testimonials"));
+const FAQ = dynamic(() => import("@/components/sections/FAQ"));
+const CTA = dynamic(() => import("@/components/sections/CTA"));
 
 export const metadata = constructMetadata({
   canonical: "/",

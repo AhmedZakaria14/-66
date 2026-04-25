@@ -38,8 +38,8 @@ export default function Header() {
             <Image 
               src={siteConfig.logo} 
               alt={siteConfig.name} 
-              width={160} 
-              height={50} 
+              width={120} 
+              height={40} 
               className="object-contain h-12 w-auto scale-125 origin-left"
               priority
             />
