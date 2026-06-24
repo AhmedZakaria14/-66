@@ -1,6 +1,3 @@
-'use client';
-
-import * as motion from 'motion/react-client';
 import { ShieldCheck, Gem, Users, Clock } from 'lucide-react';
 import Image from 'next/image';
 
@@ -45,42 +42,24 @@ export default function WhyUs() {
           
           {/* Content */}
           <div>
-            <motion.span 
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+            <span 
               className="text-accent font-bold tracking-wider uppercase text-sm mb-4 block"
             >
               لماذا نجارة أبو ثابت؟
-            </motion.span>
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="font-amiri text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight"
-            >
+            </span>
+            <h2 className="font-amiri text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
               خبرة تُرى في <br/><span className="text-accent italic">كل تفصيل</span>
-            </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-white/70 text-lg mb-10 leading-relaxed"
-            >
+            </h2>
+            <p className="text-white/70 text-lg mb-10 leading-relaxed">
               نجاح مشاريعنا ليس صدفة، بل هو نتيجة التزامنا المطلق بالجودة والاهتمام بالتفاصيل الدقيقة التي تصنع الفارق بين العمل العادي والعمل الاستثنائي.
-            </motion.p>
+            </p>
 
             <div className="grid sm:grid-cols-2 gap-8">
               {REASONS.map((reason, index) => (
-                <motion.div 
+                <div 
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 + index * 0.1 }}
-                  className="flex flex-col gap-4"
+                  className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both"
+                  style={{ animationDelay: `${index * 150}ms` }}
                 >
                   <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-accent">
                     <reason.icon className="w-6 h-6" />
@@ -89,19 +68,13 @@ export default function WhyUs() {
                     <h3 className="font-bold text-xl mb-2 font-amiri text-white">{reason.title}</h3>
                     <p className="text-white/60 text-sm leading-relaxed">{reason.description}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
 
           {/* Image */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
+          <div className="relative">
             <div className="aspect-[4/5] rounded-3xl overflow-hidden relative border border-white/10">
               <Image
                 src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016578/WhatsApp_Image_2026-04-01_at_12.46.02_AM_foly1d.jpg"
@@ -122,7 +95,7 @@ export default function WhyUs() {
             {/* Decoration */}
             <div className="absolute -top-6 -right-6 w-32 h-32 border-t-2 border-r-2 border-accent rounded-tr-3xl opacity-50"></div>
             <div className="absolute -bottom-6 -left-6 w-32 h-32 border-b-2 border-l-2 border-accent rounded-bl-3xl opacity-50"></div>
-          </motion.div>
+          </div>
 
         </div>
       </div>

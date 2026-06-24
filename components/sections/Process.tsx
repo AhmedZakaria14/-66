@@ -1,6 +1,3 @@
-'use client';
-
-import * as motion from 'motion/react-client';
 import { Lightbulb, PenTool, Hammer, CheckCircle2 } from 'lucide-react';
 
 const STEPS = [
@@ -44,13 +41,10 @@ export default function Process() {
           <div className="hidden lg:block absolute top-[4.5rem] left-[10%] right-[10%] h-0.5 bg-primary/20 pointer-events-none"></div>
 
           {STEPS.map((step, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative flex flex-col pt-8 lg:pt-0"
+              className="relative flex flex-col pt-8 lg:pt-0 animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="w-20 h-20 bg-white rounded-2xl shadow-xl shadow-black/5 flex items-center justify-center text-primary mb-8 relative z-10 lg:mx-auto border border-black/5">
                 <step.icon className="w-8 h-8" />
@@ -66,7 +60,7 @@ export default function Process() {
                   {step.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

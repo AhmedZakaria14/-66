@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import TestimonialCard from '@/components/ui/TestimonialCard';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import * as motion from 'motion/react-client';
 import Script from 'next/script';
 import { getReviewSchema } from '@/lib/schema';
 
@@ -101,11 +100,12 @@ export default function Testimonials() {
         </div>
 
         <div className="overflow-hidden pb-8 -mx-4 px-4 md:mx-0 md:px-0">
-          <motion.div 
-            className="flex gap-6"
-            animate={{ x: `calc(${activeIndex * 100}% + ${activeIndex * 1.5}rem)` }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            style={{ width: `${TESTIMONIALS.length * 100}%` }}
+          <div 
+            className="flex gap-6 transition-transform duration-500 ease-in-out"
+            style={{ 
+              width: `${TESTIMONIALS.length * 100}%`,
+              transform: `translateX(calc(${activeIndex * 100}% + ${activeIndex * 1.5}rem))`
+            }}
           >
             {TESTIMONIALS.map((testimonial) => (
               <div 
@@ -115,7 +115,7 @@ export default function Testimonials() {
                 <TestimonialCard {...testimonial} />
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,5 +1,3 @@
-'use client';
-
 import { siteConfig } from '@/lib/constants';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,10 +8,17 @@ export default function Hero() {
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-bg-dark pt-20">
       {/* Background Video with Parallax & Overlay */}
-      <div className="absolute inset-0 z-0 select-none overflow-hidden">
+      <div className="absolute inset-0 z-0 select-none overflow-hidden bg-bg-dark">
+        <Image
+          src="https://res.cloudinary.com/dxvjqrb9l/video/upload/q_auto,f_webp,w_1280/v1777016633/WhatsApp_Video_2026-04-01_at_12.46.07_AM_ap19jy.jpg"
+          alt="صناعة خشبية"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
         <video 
           src="https://res.cloudinary.com/dxvjqrb9l/video/upload/q_auto,vc_auto,w_1280/v1777016633/WhatsApp_Video_2026-04-01_at_12.46.07_AM_ap19jy.mp4" 
-          poster="https://res.cloudinary.com/dxvjqrb9l/video/upload/q_auto,f_webp,w_1280/v1777016633/WhatsApp_Video_2026-04-01_at_12.46.07_AM_ap19jy.jpg"
           autoPlay 
           loop 
           muted 
@@ -37,7 +42,7 @@ export default function Hero() {
             أفضل مهارات النجارة في الرياض
           </div>
 
-          <h2 className="text-4xl md:text-6xl lg:text-8xl text-white font-amiri font-bold leading-tight md:leading-[1.1] mb-6 flex flex-wrap justify-center gap-x-3 md:gap-x-5 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150 fill-mode-both">
+          <h1 className="text-4xl md:text-6xl lg:text-8xl text-white font-amiri font-bold leading-tight md:leading-[1.1] mb-6 flex flex-wrap justify-center gap-x-3 md:gap-x-5 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150 fill-mode-both">
             {title.split(' ').map((word, index) => (
               <span
                 key={index}
@@ -46,7 +51,7 @@ export default function Hero() {
                 {word}
               </span>
             ))}
-          </h2>
+          </h1>
 
           <p
             className="text-lg md:text-xl text-white/80 max-w-2xl text-center leading-relaxed mb-10 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-both"

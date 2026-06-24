@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "نجارة أبو ثابت",
   description: "أفضل نجار في الرياض - خدمات نجارة احترافية تشمل المطابخ الخشبية وغرف النوم والأبواب والديكورات الخشبية بجودة عالية وأسعار تنافسية. بإدارة أبو ثابت.",
-  domain: "https://najjar-riyadh.com",
+  domain: "https://www.najjarriyadh.com",
   logo: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777075916/Abu_Thabet_Logo_BG_Removed_j1bn42.png",
   contact: {
     phone: "+966563892344",

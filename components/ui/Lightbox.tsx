@@ -1,6 +1,5 @@
 'use client';
 
-import * as motion from 'motion/react-client';
 import { X } from 'lucide-react';
 import Image from 'next/image';
 
@@ -15,19 +14,13 @@ export default function Lightbox({ isOpen, onClose, imageSrc, title }: LightboxP
   if (!isOpen) return null;
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+    <div
       onClick={onClose}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-bg-dark/90 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-bg-dark/90 backdrop-blur-sm animate-in fade-in duration-200"
     >
-      <motion.div
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.9, opacity: 0 }}
+      <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-4xl max-h-[90vh] rounded-2xl overflow-hidden shadow-2xl"
+        className="relative w-full max-w-4xl max-h-[90vh] rounded-2xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200"
       >
         <button
           onClick={onClose}
@@ -44,7 +37,7 @@ export default function Lightbox({ isOpen, onClose, imageSrc, title }: LightboxP
             sizes="(max-width: 1536px) 100vw, 1536px"
           />
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }

@@ -6,8 +6,6 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, MessageCircle } from 'lucide-react';
 import { MAIN_NAV, siteConfig } from '@/lib/constants';
 import { cn } from '@/lib/utils';
-import * as motion from 'motion/react-client';
-
 import Image from 'next/image';
 
 export default function Header() {
@@ -58,8 +56,7 @@ export default function Header() {
               >
                 {item.name}
                 {pathname === item.href && (
-                  <motion.div
-                    layoutId="underline"
+                  <div
                     className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent"
                   />
                 )}
@@ -92,11 +89,10 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu Drawer */}
-      <motion.div
-        initial={false}
-        animate={mobileMenuOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
+      <div
         className={cn(
-          "md:hidden overflow-hidden bg-bg-dark border-b border-white/10 absolute top-full left-0 right-0 shadow-2xl origin-top"
+          "md:hidden overflow-hidden bg-bg-dark border-b border-white/10 absolute top-full left-0 right-0 shadow-2xl origin-top transition-all duration-300",
+          mobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         )}
       >
         <div className="px-4 py-6 flex flex-col gap-6">
@@ -132,7 +128,7 @@ export default function Header() {
             تواصل عبر واتساب
           </a>
         </div>
-      </motion.div>
+      </div>
     </header>
   );
 }

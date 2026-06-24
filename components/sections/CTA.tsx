@@ -1,7 +1,4 @@
-'use client';
-
 import { siteConfig } from '@/lib/constants';
-import * as motion from 'motion/react-client';
 import Image from 'next/image';
 import { Phone, MessageCircle } from 'lucide-react';
 
@@ -28,32 +25,15 @@ export default function CTA({
       <div className="container relative z-10 mx-auto px-4 md:px-6 text-center">
         <div className="max-w-3xl mx-auto flex flex-col items-center">
           
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-amiri text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6"
-          >
+          <h2 className="font-amiri text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
             {title}
-          </motion.h2>
+          </h2>
           
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-white/70 text-lg md:text-xl mb-10 leading-relaxed"
-          >
+          <p className="text-white/70 text-lg md:text-xl mb-10 leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 fill-mode-both">
             {subtitle}
-          </motion.p>
+          </p>
           
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
-          >
+          <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-both">
             <a
               href={`tel:${siteConfig.contact.phone}`}
               className="w-full sm:w-auto px-8 py-4 bg-accent text-bg-dark rounded-xl font-bold text-lg transition-transform hover:scale-105 shadow-xl flex items-center justify-center gap-3 group"
@@ -74,7 +54,7 @@ export default function CTA({
               <MessageCircle className="w-6 h-6 rtl:scale-x-[-1]" />
               تواصل عبر واتساب
             </a>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -91,13 +91,18 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
-        <div className="container mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-white/50 text-center md:text-right" suppressHydrationWarning>
-            حقوق النشر {currentYear} © <span className="text-white/80">{siteConfig.name}</span>. جميع الحقوق محفوظة.
-          </p>
-          <div className="flex items-center gap-6 text-sm text-white/50">
-            <Link href="/privacy" className="hover:text-white transition-colors">سياسة الخصوصية</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">الشروط والأحكام</Link>
+        <div className="container mx-auto px-4 md:px-6 py-6 flex flex-col items-center gap-4">
+          <div className="w-full flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-white/50 text-center md:text-right" suppressHydrationWarning>
+              حقوق النشر {currentYear} © <span className="text-white/80">{siteConfig.name}</span>. جميع الحقوق محفوظة.
+            </p>
+            <div className="flex items-center gap-6 text-sm text-white/50">
+              <Link href="/privacy" className="hover:text-white transition-colors">سياسة الخصوصية</Link>
+              <Link href="/terms" className="hover:text-white transition-colors">الشروط والأحكام</Link>
+            </div>
+          </div>
+          <div className="text-xs md:text-sm text-white/40 mt-4 md:mt-2 text-center">
+            تم التصميم والتطوير بواسطة <a href="https://NasharHub.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-white transition-colors font-medium mx-1" dir="ltr">NasharHub.com</a>
           </div>
         </div>
       </div>

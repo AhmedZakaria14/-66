@@ -1,6 +1,5 @@
 'use client';
 
-import * as motion from 'motion/react-client';
 import Image from 'next/image';
 import { Search } from 'lucide-react';
 
@@ -13,14 +12,9 @@ interface PortfolioCardProps {
 
 export default function PortfolioCard({ title, category, imageSrc, onClick }: PortfolioCardProps) {
   return (
-    <motion.div
-      layout
+    <div
       onClick={onClick}
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.4 }}
-      className="group cursor-pointer relative rounded-2xl overflow-hidden aspect-[4/5] md:aspect-square border border-black/5"
+      className="group cursor-pointer relative rounded-2xl overflow-hidden aspect-[4/5] md:aspect-square border border-black/5 animate-in zoom-in-95 duration-500 fill-mode-both"
     >
       <Image
         src={imageSrc}
@@ -40,6 +34,6 @@ export default function PortfolioCard({ title, category, imageSrc, onClick }: Po
           {title}
         </h3>
       </div>
-    </motion.div>
+    </div>
   );
 }

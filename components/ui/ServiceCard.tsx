@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import * as motion from 'motion/react-client';
 import { ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
 
@@ -13,12 +12,9 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ title, excerpt, imageSrc, delay = 0, href = "/services" }: ServiceCardProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.6, delay }}
-      className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-black/5"
+    <div
+      className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-black/5 animate-in fade-in slide-in-from-bottom-4 fill-mode-both"
+      style={{ animationDelay: `${delay * 1000}ms` }}
     >
       <div className="aspect-[4/3] w-full relative overflow-hidden">
         <Image
@@ -46,6 +42,6 @@ export default function ServiceCard({ title, excerpt, imageSrc, delay = 0, href 
           <ArrowLeft className="w-4 h-4 transform group-hover/link:-translate-x-1 transition-transform rtl:rotate-180 rtl:group-hover/link:translate-x-1" />
         </Link>
       </div>
-    </motion.div>
+    </div>
   );
 }

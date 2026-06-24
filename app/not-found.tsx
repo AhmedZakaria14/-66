@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { siteConfig, MAIN_NAV, SERVICES_LIST } from '@/lib/constants';
-import * as motion from 'motion/react-client';
 import { Home, Search, ArrowRight } from 'lucide-react';
 
 export const metadata = {
@@ -18,11 +17,8 @@ export default function NotFound() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10 text-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-2xl mx-auto bg-white rounded-3xl shadow-xl border border-black/5 p-8 md:p-16 mb-12"
+        <div
+          className="max-w-2xl mx-auto bg-white rounded-3xl shadow-xl border border-black/5 p-8 md:p-16 mb-12 animate-in zoom-in-95 duration-500"
         >
           <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8 text-primary">
             <Search className="w-12 h-12" />
@@ -44,14 +40,11 @@ export default function NotFound() {
             <Home className="w-5 h-5" />
             العودة للرئيسية
           </Link>
-        </motion.div>
+        </div>
 
         {/* Helpful Links Grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-          className="max-w-4xl mx-auto text-right"
+        <div
+          className="max-w-4xl mx-auto text-right animate-in slide-in-from-bottom-4 duration-500 delay-300 fill-mode-both"
         >
           <h3 className="text-2xl font-amiri font-bold text-bg-dark mb-8 text-center relative inline-block left-1/2 -translate-x-1/2">
             اكتشف أبرز ما نقدمه:
@@ -73,7 +66,7 @@ export default function NotFound() {
               </Link>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

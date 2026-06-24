@@ -2,8 +2,6 @@
 
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import * as motion from 'motion/react-client';
-import { AnimatePresence } from 'motion/react';
 import Script from 'next/script';
 import { getFAQSchema } from '@/lib/schema';
 
@@ -83,20 +81,17 @@ export default function FAQ() {
                   }`} 
                 />
               </button>
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="px-6 pb-6 pt-0 text-text-muted leading-relaxed">
-                      {faq.answer}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="px-6 pb-6 pt-0 text-text-muted leading-relaxed">
+                  {faq.answer}
+                </div>
+              </div>
+              
             </div>
           ))}
         </div>

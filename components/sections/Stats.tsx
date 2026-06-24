@@ -1,8 +1,6 @@
 'use client';
 
-import * as motion from 'motion/react-client';
-import { useInView } from 'motion/react';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import CountUp from 'react-countup';
 
 const stats = [
@@ -13,8 +11,21 @@ const stats = [
 ];
 
 export default function Stats() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [isInView, setIsInView] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsInView(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.1, rootMargin: "-50px" });
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => observer.disconnect();
+  },[]);
 
   return (
     <section className="bg-bg-light py-16 md:py-24" ref={ref}>
@@ -22,12 +33,10 @@ export default function Stats() {
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-black/5 -mt-24 md:-mt-32 relative z-30 border border-primary/10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-x divide-x-reverse divide-primary/10">
             {stats.map((stat, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex flex-col items-center justify-center text-center px-4"
+                className={`flex flex-col items-center justify-center text-center px-4 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <div className="flex items-center justify-center text-4xl md:text-5xl font-amiri font-bold text-primary mb-2 dir-ltr" dir="ltr">
                   {isInView && (
@@ -44,7 +53,7 @@ export default function Stats() {
                 <div className="text-text-muted font-medium text-sm md:text-base">
                   {stat.label}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

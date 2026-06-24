@@ -48,7 +48,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <h1 className="sr-only">نجارة أبو ثابت — خدمات نجارة احترافية بجودة عالية</h1>
       <Hero />
       <Stats />
       <Services />
