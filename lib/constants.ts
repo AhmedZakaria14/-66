@@ -6,7 +6,7 @@ export const siteConfig = {
   contact: {
     phone: "+966563892344",
     phoneDisplay: "+966 56 389 2344",
-    email: "info@najjar-riyadh.com",
+    email: "Info@najjarriyadh.com",
     address: "زهير بن ابي سلمى، المصيف، الرياض، المملكة العربية السعودية",
     whatsappNum: "966563892344"
   },
