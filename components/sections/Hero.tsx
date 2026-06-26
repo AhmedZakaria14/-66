@@ -42,15 +42,8 @@ export default function Hero() {
             أفضل مهارات النجارة في الرياض
           </div>
 
-          <h1 className="text-4xl md:text-6xl lg:text-8xl text-white font-amiri font-bold leading-tight md:leading-[1.1] mb-6 flex flex-wrap justify-center gap-x-3 md:gap-x-5 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150 fill-mode-both">
-            {title.split(' ').map((word, index) => (
-              <span
-                key={index}
-                className={word === 'الجمال' ? 'text-accent text-glow' : ''}
-              >
-                {word}
-              </span>
-            ))}
+          <h1 className="text-4xl md:text-6xl lg:text-8xl text-white font-amiri font-bold leading-tight md:leading-[1.1] mb-6 text-center animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150 fill-mode-both">
+            نحن نصنع <span className="text-accent text-glow mx-1 md:mx-2">الجمال</span> من الخشب
           </h1>
 
           <p

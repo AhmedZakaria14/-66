@@ -41,9 +41,9 @@ export const SERVICES_LIST = [
 export const BLOG_POSTS = [
   {
     slug: 'افضل-انواع-الخشب-للمطابخ-الرياض',
-    title: 'أفضل أنواع الخشب للمطابخ في الرياض 2025 | دليل شامل',
+    title: 'أفضل أنواع الخشب للمطابخ في الرياض 2026 | دليل شامل',
     excerpt: 'تعرف على أفضل أنواع الأخشاب المناسبة للمطابخ في أجواء الرياض، ومقارنة بين خشب البلوط، الزان، والـ MDF.',
-    date: '2025-05-10',
+    date: '2026-05-10',
     image: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016588/WhatsApp_Image_2026-04-01_at_12.46.07_AM_3_l2yjza.jpg',
     category: 'مطابخ'
   },
@@ -51,23 +51,23 @@ export const BLOG_POSTS = [
     slug: 'كيف-تختار-نجار-موثوق-الرياض',
     title: 'كيف تختار نجار موثوق في الرياض؟ 7 معايير أساسية',
     excerpt: 'دليل عملي لاختيار النجار الأفضل لمشروعك لتجنب الخسائر وضمان جودة الأعمال الخشبية.',
-    date: '2025-04-22',
+    date: '2026-04-22',
     image: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016588/WhatsApp_Image_2026-04-01_at_12.46.07_AM_2_ev11ro.jpg',
     category: 'نصائح'
   },
   {
-    slug: 'تصاميم-غرف-نوم-خشب-2025',
-    title: 'أجمل تصاميم غرف نوم خشب 2025 | الرياض',
+    slug: 'تصاميم-غرف-نوم-خشب-2026',
+    title: 'أجمل تصاميم غرف نوم خشب 2026 | الرياض',
     excerpt: 'اكتشف أحدث صيحات وتصاميم غرف النوم الخشبية المودرن والكلاسيكية لترقية مساحتك الخاصة.',
-    date: '2025-04-05',
+    date: '2026-04-05',
     image: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016587/WhatsApp_Image_2026-04-01_at_12.46.06_AM_4_qfxd5t.jpg',
     category: 'غرف نوم'
   },
   {
     slug: 'اسعار-النجارة-الرياض',
-    title: 'أسعار النجارة في الرياض 2025 | دليل التكاليف الكامل',
+    title: 'أسعار النجارة في الرياض 2026 | دليل التكاليف الكامل',
     excerpt: 'تعرف على متوسط أسعار تفصيل المطابخ، الأبواب، والديكورات الخشبية في سوق الرياض وكيف تحسب التكلفة.',
-    date: '2025-03-18',
+    date: '2026-03-18',
     image: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016587/WhatsApp_Image_2026-04-01_at_12.46.07_AM_wz6dat.jpg',
     category: 'أسعار'
   },
@@ -75,7 +75,7 @@ export const BLOG_POSTS = [
     slug: 'برجولات-خشبية-الرياض',
     title: 'برجولات خشبية في الرياض | التصاميم والأسعار والتركيب',
     excerpt: 'كل ما تحتاج معرفته عن تفصيل وتصميم البرجولات الخشبية للحدائق وأسطح المنازل.',
-    date: '2025-02-28',
+    date: '2026-02-28',
     image: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016586/WhatsApp_Image_2026-04-01_at_12.46.06_AM_2_ui9yvj.jpg',
     category: 'ديكور خارجي'
   },
@@ -83,7 +83,7 @@ export const BLOG_POSTS = [
     slug: 'صيانة-وترميم-الاثاث-الخشبي',
     title: 'دليل صيانة وترميم الأثاث الخشبي في الرياض',
     excerpt: 'خطوات وطرق صيانة أثاثك الخشبي وإصلاح الخدوش لإعادته كالجديد بأقل التكاليف.',
-    date: '2025-01-15',
+    date: '2026-01-15',
     image: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016586/WhatsApp_Image_2026-04-01_at_12.46.07_AM_1_hihzc9.jpg',
     category: 'صيانة'
   }

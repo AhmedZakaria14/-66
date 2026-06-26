@@ -8,7 +8,7 @@ import { BLOG_POSTS } from '@/lib/constants';
 
 export const metadata: Metadata = constructMetadata({
   title: 'المدونة',
-  description: 'مدونة نجارة أبو ثابت: مقالات ونصائح حول اختيار الأخشاب، تصاميم المطابخ، العناية بالأثاث، وأحدث ديكورات الخشب في 2025.',
+  description: 'مدونة نجارة أبو ثابت: مقالات ونصائح حول اختيار الأخشاب، تصاميم المطابخ، العناية بالأثاث، وأحدث ديكورات الخشب في 2026.',
   canonical: '/blog',
 });
 
