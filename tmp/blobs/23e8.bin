@@ -1,0 +1,6 @@
+import type { ImageLoaderProps } from 'next/image';
+import { localizeMediaUrl } from './media';
+
+export default function localImageLoader({ src }: ImageLoaderProps): string {
+  return localizeMediaUrl(src);
+}

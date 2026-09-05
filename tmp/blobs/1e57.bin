@@ -1,0 +1,29 @@
+/**
+ * Convert the legacy Cloudinary asset URLs used by the original site into
+ * repository-local public paths. This keeps existing component data intact
+ * while making the rendered site independent from the expired CDN assets.
+ */
+export function localizeMediaUrl(src: string): string {
+  if (!src || !src.includes('res.cloudinary.com')) return src;
+
+  if (src.includes('Abu_Thabet_Logo_BG_Removed')) {
+    return '/images/abu-thabet-logo.png';
+  }
+
+  const imageMatch = src.match(
+    /\/(WhatsApp_Image_2026-04-01_at_\d{2}\.\d{2}\.\d{2}_AM(?:_\d+)?)_[A-Za-z0-9]+\.jpg(?:\?.*)?$/i
+  );
+
+  if (imageMatch) {
+    return `/media/carpentry/${imageMatch[1]}.jpg`;
+  }
+
+  const videoMatch = src.match(/WhatsApp_Video_2026-04-01_at_12\.46\.07_AM_[A-Za-z0-9]+\.(?:mp4|jpg)(?:\?.*)?$/i);
+  if (videoMatch) {
+    return src.toLowerCase().includes('.mp4')
+      ? '/media/carpentry/hero-carpentry.mp4'
+      : '/media/carpentry/hero-poster.jpg';
+  }
+
+  return src;
+}
