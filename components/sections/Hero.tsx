@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Background Video with Parallax & Overlay */}
       <div className="absolute inset-0 z-0 select-none overflow-hidden bg-bg-dark">
         <Image
-          src="https://res.cloudinary.com/dxvjqrb9l/video/upload/q_auto,f_webp,w_1280/v1777016633/WhatsApp_Video_2026-04-01_at_12.46.07_AM_ap19jy.jpg"
+          src="/media/hero-carpentry-poster.jpg"
           alt="صناعة خشبية"
           fill
           priority
@@ -18,12 +18,13 @@ export default function Hero() {
           className="object-cover"
         />
         <video 
-          src="https://res.cloudinary.com/dxvjqrb9l/video/upload/q_auto,vc_auto,w_1280/v1777016633/WhatsApp_Video_2026-04-01_at_12.46.07_AM_ap19jy.mp4" 
+          src="/media/hero-carpentry.mp4"
+          poster="/media/hero-carpentry-poster.jpg"
           autoPlay 
           loop 
           muted 
           playsInline 
-          preload="none"
+          preload="metadata"
           className="absolute min-w-full min-h-full max-w-none w-auto h-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover opacity-100 brightness-100"
         />
         {/* Gradient Overlay */}

@@ -22,9 +22,10 @@ export function constructMetadata({
     "أبواب خشبية الرياض",
     "ديكورات خشبية الرياض"
   ],
-  ogImage = '/images/og-main.jpg',
+  ogImage = '/media/og-main.jpg',
 }: SEOProps = {}): Metadata {
   return {
+    metadataBase: new URL(siteConfig.domain),
     title: {
       default: `${siteConfig.name} | خدمات نجارة احترافية في الرياض`,
       template: `%s | ${siteConfig.name}`,

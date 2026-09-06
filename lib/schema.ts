@@ -11,8 +11,8 @@ export const getLocalBusinessSchema = () => {
     url: siteConfig.domain,
     telephone: siteConfig.contact.phone,
     email: siteConfig.contact.email,
-    image: [`${siteConfig.domain}/images/og-main.jpg`],
-    logo: siteConfig.logo,
+    image: [`${siteConfig.domain}/media/og-main.jpg`],
+    logo: `${siteConfig.domain}${siteConfig.logo}`,
     address: {
       "@type": "PostalAddress",
       streetAddress: "طريق الملك فهد",
@@ -214,4 +214,3 @@ export const getArticleSchema = (post: { title: string; excerpt: string; date: s
     }
   };
 };
-

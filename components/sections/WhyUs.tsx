@@ -30,7 +30,7 @@ export default function WhyUs() {
       {/* Texture Background */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <Image
-          src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016579/WhatsApp_Image_2026-04-01_at_12.46.00_AM_qcadvy.jpg"
+          src="/media/cached-124600-0.jpg"
           alt="texture"
           fill
           className="object-cover"
@@ -77,7 +77,7 @@ export default function WhyUs() {
           <div className="relative">
             <div className="aspect-[4/5] rounded-3xl overflow-hidden relative border border-white/10">
               <Image
-                src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016578/WhatsApp_Image_2026-04-01_at_12.46.02_AM_foly1d.jpg"
+                src="/media/work-124602-0.jpg"
                 alt="نجار محترف في الرياض يعمل على قطعة خشبية"
                 fill
                 className="object-cover"

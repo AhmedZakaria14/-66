@@ -29,7 +29,7 @@ export default function PortfolioPage() {
       {/* Page Header */}
       <section className="bg-bg-dark pt-32 pb-20 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <Image src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016585/WhatsApp_Image_2026-04-01_at_12.46.06_AM_1_oxwnww.jpg" alt="خلفية أعمالنا" fill className="object-cover" />
+          <Image src="/media/work-124606-1.jpg" alt="خلفية أعمالنا" fill className="object-cover" />
         </div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">

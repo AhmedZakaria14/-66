@@ -22,7 +22,7 @@ const jsonLd = {
   name: siteConfig.name,
   description: siteConfig.description,
   url: siteConfig.domain,
-  logo: siteConfig.logo,
+  logo: `${siteConfig.domain}${siteConfig.logo}`,
   telephone: siteConfig.contact.phone,
   email: siteConfig.contact.email,
   address: {

@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "نجارة أبو ثابت",
   description: "أفضل نجار في الرياض - خدمات نجارة احترافية تشمل المطابخ الخشبية وغرف النوم والأبواب والديكورات الخشبية بجودة عالية وأسعار تنافسية. بإدارة أبو ثابت.",
   domain: "https://www.najjarriyadh.com",
-  logo: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777075916/Abu_Thabet_Logo_BG_Removed_j1bn42.png",
+  logo: "/media/abu-thabet-logo.png",
   contact: {
     phone: "+966563892344",
     phoneDisplay: "+966 56 389 2344",
@@ -44,7 +44,7 @@ export const BLOG_POSTS = [
     title: 'أفضل أنواع الخشب للمطابخ في الرياض 2026 | دليل شامل',
     excerpt: 'تعرف على أفضل أنواع الأخشاب المناسبة للمطابخ في أجواء الرياض، ومقارنة بين خشب البلوط، الزان، والـ MDF.',
     date: '2026-05-10',
-    image: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016588/WhatsApp_Image_2026-04-01_at_12.46.07_AM_3_l2yjza.jpg',
+    image: '/media/work-124607-3.jpg',
     category: 'مطابخ'
   },
   {
@@ -52,7 +52,7 @@ export const BLOG_POSTS = [
     title: 'كيف تختار نجار موثوق في الرياض؟ 7 معايير أساسية',
     excerpt: 'دليل عملي لاختيار النجار الأفضل لمشروعك لتجنب الخسائر وضمان جودة الأعمال الخشبية.',
     date: '2026-04-22',
-    image: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016588/WhatsApp_Image_2026-04-01_at_12.46.07_AM_2_ev11ro.jpg',
+    image: '/media/work-124607-2.jpg',
     category: 'نصائح'
   },
   {
@@ -60,7 +60,7 @@ export const BLOG_POSTS = [
     title: 'أجمل تصاميم غرف نوم خشب 2026 | الرياض',
     excerpt: 'اكتشف أحدث صيحات وتصاميم غرف النوم الخشبية المودرن والكلاسيكية لترقية مساحتك الخاصة.',
     date: '2026-04-05',
-    image: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016587/WhatsApp_Image_2026-04-01_at_12.46.06_AM_4_qfxd5t.jpg',
+    image: '/media/work-124606-4.jpg',
     category: 'غرف نوم'
   },
   {
@@ -68,7 +68,7 @@ export const BLOG_POSTS = [
     title: 'أسعار النجارة في الرياض 2026 | دليل التكاليف الكامل',
     excerpt: 'تعرف على متوسط أسعار تفصيل المطابخ، الأبواب، والديكورات الخشبية في سوق الرياض وكيف تحسب التكلفة.',
     date: '2026-03-18',
-    image: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016587/WhatsApp_Image_2026-04-01_at_12.46.07_AM_wz6dat.jpg',
+    image: '/media/work-124607-0.jpg',
     category: 'أسعار'
   },
   {
@@ -76,7 +76,7 @@ export const BLOG_POSTS = [
     title: 'برجولات خشبية في الرياض | التصاميم والأسعار والتركيب',
     excerpt: 'كل ما تحتاج معرفته عن تفصيل وتصميم البرجولات الخشبية للحدائق وأسطح المنازل.',
     date: '2026-02-28',
-    image: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016586/WhatsApp_Image_2026-04-01_at_12.46.06_AM_2_ui9yvj.jpg',
+    image: '/media/work-124606-2.jpg',
     category: 'ديكور خارجي'
   },
   {
@@ -84,7 +84,7 @@ export const BLOG_POSTS = [
     title: 'دليل صيانة وترميم الأثاث الخشبي في الرياض',
     excerpt: 'خطوات وطرق صيانة أثاثك الخشبي وإصلاح الخدوش لإعادته كالجديد بأقل التكاليف.',
     date: '2026-01-15',
-    image: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016586/WhatsApp_Image_2026-04-01_at_12.46.07_AM_1_hihzc9.jpg',
+    image: '/media/work-124607-1.jpg',
     category: 'صيانة'
   }
 ];

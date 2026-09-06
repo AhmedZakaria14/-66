@@ -14,7 +14,7 @@ export default function CTA({
       {/* Background Image & Texture */}
       <div className="absolute inset-0 z-0 select-none">
         <Image
-          src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777016579/WhatsApp_Image_2026-04-01_at_12.46.03_AM_3_uu7bjj.jpg"
+          src="/media/work-124603-3.jpg"
           alt="نجارة وخشب"
           fill
           className="object-cover opacity-20 brightness-50"
